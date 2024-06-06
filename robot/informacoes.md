@@ -8,7 +8,7 @@ robot  nome_do_arquivo.robot
 
 ## Comando para rodar um teste específico EX: cadastro_caminho_feliz.robot teste 2
 
-robot -t "Verificar se é possível criar mais de um card se preenchermos os campos corretamente" .\cadastro_caminho_feliz.robot
+robot -t "nome_do_teste" .\cadastro_caminho_feliz.robot
 
 ## BDD (Behaviour Driven Development): Técnica usada nas Keywords
 
