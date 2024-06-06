@@ -1,5 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library          SeleniumLibrary
+Resource         setup_teardown.robot
+Test Setup       Dado que eu acesse o organo
+Test Teardown    Fechar o navegador
 
 *** Variables ***
 ${URL}                    http://localhost:3000/
@@ -19,16 +22,14 @@ ${OPCAO_INOVACAO}         //option[contains(.,'Inovação e Gestão')]
 *** Test Cases ***
 
 Verificar se ao preencher os campos do formulário corretamente os dados são inseridos na lista e se um novo card é criado no time esperado
-    Dado que eu acesse o organo
-    E preencha os campos do formulário
+    
+    Dado que os campos do formulário sejam preenchidos
     E clique no botão criar card
     Então identificar o card dentro do bloco do time esperado
     
 *** Keywords ***
-Dado que eu acesse o organo
-    Open Browser    url=${URL}    browser=Chrome
 
-E preencha os campos do formulário
+Dado que os campos do formulário sejam preenchidos
     Input Text       ${CAMPO_NOME}      Denisson
     Input Text       ${CAMPO_CARGO}     Desenvolvedor
     Input Text       ${CAMPO_IMAGEM}    https://picsum.photos/200/300
