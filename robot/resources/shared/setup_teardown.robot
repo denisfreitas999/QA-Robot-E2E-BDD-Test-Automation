@@ -1,5 +1,5 @@
 *** Settings ***
-Library    SeleniumLibrary
+Resource    ../main.robot
 
 *** Variables ***
 ${URL}    http://localhost:3000/
